@@ -39,6 +39,9 @@ end
 Each decorated association will be available as a method on the decorator,
 you can still access the original association with `model.association_name`.
 
+The association decorator class name will be auto-detected from the relation result and current decorator name if not given.
+Example for `:comments` association on `Decorators::UserDecorator` it will be `Decorators::CommentDecorator`.
+
 ### ArbreDecorator
 
 With `ActiveAdmin::ArbreDecorator` you can keep your show/index blocks in AA clean and use Arbre DSL in decorator:
@@ -52,6 +55,7 @@ class UserDecorator < ActiveAdmin::ArbreDecorator
   end
 end
 ```
+This is done by using including `Arbre::Element::BuilderMethods` and new `arbre_context`.
 
 Also included: `ActionView::Helpers` and `Rails.application.routes.url_helpers`,
 so you can:
