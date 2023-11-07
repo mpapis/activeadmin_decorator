@@ -45,15 +45,15 @@ With `ActiveAdmin::ArbreDecorator` you can keep your show/index blocks in AA cle
 ```ruby
 class UserDecorator < ActiveAdmin::ArbreDecorator
   def full_name
-    ul do |list|
-      list.li first_name
-      list.li last_name
+    ul do
+      li first_name
+      li last_name
     end
   end
 end
 ```
 
-Also included: `ActiveAdmin::ViewHelpers`, `ActionView::Helpers` and `Rails.application.routes.url_helpers`,
+Also included: `ActionView::Helpers` and `Rails.application.routes.url_helpers`,
 so you can:
 ```ruby
 class CommentDecorator < ActiveAdmin::ArbreDecorator
