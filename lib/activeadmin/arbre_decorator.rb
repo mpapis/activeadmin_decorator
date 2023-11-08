@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'decorator'
+require_relative "decorator"
 
 module ActiveAdmin
   class ArbreDecorator < Decorator
